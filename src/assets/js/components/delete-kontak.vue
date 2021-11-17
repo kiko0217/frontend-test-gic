@@ -1,13 +1,13 @@
 <template>
-    <div id="delete-product">
-        <h1>Delete Product {{ product.name }}</h1>
+    <div id="delete-kontak">
+        <h1>Hapus Kontak {{ kontak.name }}</h1>
 
-        <p><router-link :to="{ name: 'all_products' }">Return to products</router-link></p>
+        <p><router-link :to="{ name: 'all_kontak' }">Kembali ke daftar kontak</router-link></p>
 
         <notification v-bind:notifications="notifications"></notification>
 
-        <form v-on:submit.prevent="deleteProduct">
-            <p><button class="btn btn-danger">Delete Product</button></p>
+        <form v-on:submit.prevent="deleteKontak">
+            <p><button class="btn btn-danger">Hapus Kontak</button></p>
         </form>
     </div>
 </template>
@@ -18,37 +18,37 @@
     export default{
         data(){
             return{
-                product:{},
+                kontak:{},
                 notifications:[]
             }
         },
 
         created: function(){
-            this.getProduct();
+            this.getKontak();
         },
 
         methods: {
-            getProduct: function()
+            getKontak: function()
             {
-                this.$http.get('http://localhost:3000/api/product/' + this.$route.params.id).then((response) => {
-                    this.product = response.body;
+                this.$http.get('http://localhost:3000/api/kontak/daftar/' + this.$route.params.id).then((response) => {
+                    this.kontak = response.body;
                 }, (response) => {
 
                 });
             },
 
-            deleteProduct: function()
+            deleteKontak: function()
             {
-                this.$http.delete('http://localhost:3000/api/product/delete/' + this.$route.params.id, this.product, {
+                this.$http.delete('http://localhost:3000/api/kontak/hapus?id=' + this.$route.params.id, this.product, {
                     headers : {
                         'Content-Type' : 'application/json'
                     }
                 }).then((response) => {
-                    this.$router.push({name: 'all_products'})
+                    this.$router.push({name: 'all_kontak'})
                 }, (response) => {
                     this.notifications.push({
                         type: 'danger',
-                        message: 'Product could not deleted'
+                        message: 'Kontak could not deleted'
                     });
                 });
             }

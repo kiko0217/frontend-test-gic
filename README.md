@@ -1,10 +1,7 @@
-#VueJS Crud Example Application
-This application is an example build of creating CRUD pages using VueJS and accessing data via an API.
+# frontend-test-gic
 
 # Install
     > npm install
-
-The API used in this example is a Node.js express API.
 
 # Run
     > npm run dev
@@ -12,10 +9,8 @@ The API used in this example is a Node.js express API.
 Navigation to http://localhost:8080 to view the site
     
 # Start API
+Running  https://github.com/kiko0217/restful-test-gci.git
 
-To start the API open your command terminal to this location and enter
-
-    > node server.js
-    
-API is now active on http://localhost:3000
+API is active on http://localhost:3000
    
+

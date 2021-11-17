@@ -8,31 +8,31 @@ Vue.use(VueResource);
 
 import App from './App.vue'
 
-const AllProducts = require('./assets/js/components/all-products.vue');
-const CreateProduct = require('./assets/js/components/create-product.vue');
-const EditProduct = require('./assets/js/components/edit-product.vue');
-const DeleteProduct = require('./assets/js/components/delete-product.vue');
+const AllKontak = require('./assets/js/components/all-kontak.vue');
+const CreateKontak = require('./assets/js/components/create-kontak.vue');
+const EditKontak = require('./assets/js/components/edit-kontak.vue');
+const DeleteKontak = require('./assets/js/components/delete-kontak.vue');
 
 const routes = [
     {
-        name: 'all_products',
+        name: 'all_kontak',
         path: '/',
-        component: AllProducts
+        component: AllKontak
     },
     {
-        name: 'create_product',
-        path: '/products/create',
-        component: CreateProduct
+        name: 'create_kontak',
+        path: '/kontak/create',
+        component: CreateKontak
     },
     {
-        name: 'edit_product',
-        path: '/products/edit/:id',
-        component: EditProduct
+        name: 'edit_kontak',
+        path: '/kontak/edit/:id',
+        component: EditKontak
     },
     {
-        name: 'delete_product',
-        path: '/products/delete/:id',
-        component: DeleteProduct
+        name: 'delete_kontak',
+        path: '/kontak/delete/:id',
+        component: DeleteKontak
     }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });
